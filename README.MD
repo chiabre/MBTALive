@@ -67,8 +67,8 @@ Follow the [HACS installation guide](https://hacs.xyz/).
      2. Sign up and generate a free API key.  
    - **Number of subsequent trips to track**: Set how many upcoming trips to monitor.  
    - **Train Number**: Enter a valid Commuter Rail train number. Train numbers are listed in the [Commuter Rail Schedules](https://www.mbta.com/schedules/commuter-rail).  
-     - **Note**: Setting a train number will switch the trip to train-based tracking (tracked until arrival).  
-
+     - **Note 1**: Setting a train number will switch the trip to train-based tracking (tracked until arrival).  
+     - **Note 2**: A trip for the specified train number must be scheduled within the next 7 days; otherwise, the sensor creation will fail.
 ## Updating  
 
 HACS will notify you when an update is available. To update:  
