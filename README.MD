@@ -61,7 +61,7 @@ Follow the [HACS installation guide](https://hacs.xyz/).
 1. Restart Home Assistant.  
 2. Go to **Settings → Devices & Services → + Add Integration**.  
 3. Search for **MBTALive** and enter the required information:  
-   - **Station Names**: Use valid MBTA station names (e.g., "South Station," "Park Street"). See [MBTA Stops](https://www.mbta.com/stops/subway). 
+  - **Station and Bus Stop Names:** Use valid MBTA station or bus stop names. The best way to get the correct name is to use the line page on MBTA. For example, for line [57](https://www.mbta.com/schedules/57/line), you can copy the full stop name from the page (e.g., [Kenmore](https://www.mbta.com/stops/place-kencl), [Cambridge St @ N Beacon St](https://www.mbta.com/stops/966)). For subway stations, the full list of stops can be found here: [MBTA Stops](https://www.mbta.com/stops/subway) (e.g., "South Station," "Park Street").
       - **Note** These are the stops of your trip (eg where you plan to board/get off), not those at the beginning/end of the route/line.
    - **MBTA API Key**:  
      1. Visit the [MBTA API Page](https://api-v3.mbta.com/).  
