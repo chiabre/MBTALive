@@ -21,7 +21,10 @@ def get_user_schema(default_api_key: str = "") -> vol.Schema:
         vol.Required("arrive_at", default=""): str,
         vol.Required("api_key", default=default_api_key): vol.All(str, vol.Length(min=32, max=32)),
         vol.Optional("max_trips", default=2): int,
-        vol.Optional("train", default=""): vol.Optional(str, vol.Length(min=3, max=3))
+        vol.Optional("train", default=""): vol.Any(
+            vol.All(str, vol.Length(min=3, max=3)),
+            ""
+        )
     })
 
 
