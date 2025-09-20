@@ -15,26 +15,14 @@ from .const import DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
-# --- Custom validator for train number ---
-def validate_train_number(value: str | None) -> str | None:
-    """Validate that train number is 2–4 alphanumeric characters or empty."""
-    if value in ("", None):
-        return None  # normalize empty
-    value = str(value).strip().upper()
-    if not re.fullmatch(r"[A-Z0-9]{2,4}", value):
-        raise vol.Invalid("Train number must be 2–4 letters/numbers or empty")
-    return value
-
-
 def get_user_schema(default_api_key: str = "") -> vol.Schema:
     return vol.Schema({
         vol.Required("depart_from", default=""): str,
         vol.Required("arrive_at", default=""): str,
         vol.Required("api_key", default=default_api_key): vol.All(str, vol.Length(min=32, max=32)),
         vol.Optional("max_trips", default=2): int,
-        vol.Optional("train", default=""): validate_train_number,
+        vol.Optional("train"): vol.All(str,vol.Length(min=2, max=4))
     })
-
 
 class MBTAConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     """Handle a config flow for the MBTA integration."""
