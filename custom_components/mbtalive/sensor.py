@@ -780,7 +780,7 @@ class MBTADepartureTimeSensor(MBTABaseTripSensor):
     def device_class(self):
         """Return the device class for the sensor."""
         # Use None or other device classes based on the data.
-        SensorDeviceClass.TIMESTAMP 
+        return SensorDeviceClass.TIMESTAMP 
 
     @property
     def extra_state_attributes(self):
@@ -1024,7 +1024,7 @@ class MBTAArrivalTimeSensor(MBTABaseTripSensor):
     def device_class(self):
         """Return the device class for the sensor."""
         # Use None or other device classes based on the data.
-        SensorDeviceClass.TIMESTAMP 
+        return SensorDeviceClass.TIMESTAMP 
 
     @property
     def extra_state_attributes(self):
